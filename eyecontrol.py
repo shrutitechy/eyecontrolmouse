@@ -9,13 +9,14 @@ face_mesh=mp.solutions.face_mesh.FaceMesh(refine_landmarks=True)
 #dimensions of the screen
 screen_w, screen_h=pyautogui.size()
 
-#since vid is trunning cont. this loop is running forever
+#since vid is running continuously, this loop is running forever
 while True:
     #has to read ever frame so 1st var. is ignored
     _, frame=cam.read()
 
     #lateral inversion correction
     frame=cv2.flip(frame,1)
+    
     #Converts the color to easier colors in order to execute
     rgb_frame=cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
 
